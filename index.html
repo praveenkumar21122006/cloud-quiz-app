@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QuickQuiz - Test Your Knowledge</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>QuickQuiz</h1>
+    <p class="subtitle">Multi-question test with instant scoring</p>
+  </header>
+
+  <!-- Start Screen -->
+  <section id="start-screen" class="card">
+    <h2>Ready to start?</h2>
+    <p><span id="total-questions-start">5</span> questions &middot; Instant feedback &middot; Final score summary</p>
+    <ul class="meta">
+      <li>Choose one answer per question</li>
+      <li>See result instantly after each answer</li>
+      <li>Get your final score at the end</li>
+    </ul>
+    <button id="start-btn" class="btn primary">Start Quiz</button>
+  </section>
+
+  <!-- Quiz Screen -->
+  <section id="quiz-screen" class="card hidden">
+    <div class="progress-wrap">
+      <div class="progress-bar"><div id="progress-fill"></div></div>
+      <div class="progress-text">
+        <span id="progress-label">Question 1 of 5</span>
+        <span id="score-live">Score: 0</span>
+      </div>
+    </div>
+
+    <div id="question-area">
+      <h2 id="question-text"></h2>
+      <div id="options" class="options"></div>
+      <div id="feedback" class="feedback hidden"></div>
+    </div>
+
+    <div class="actions">
+      <button id="next-btn" class="btn primary hidden">Next →</button>
+    </div>
+  </section>
+
+  <!-- Result Screen -->
+  <section id="result-screen" class="card hidden">
+    <h2>Quiz Complete!</h2>
+    <div class="score-circle">
+      <span id="final-score">0/5</span>
+      <small id="final-percent">0%</small>
+    </div>
+    <p id="final-message" class="final-message"></p>
+    <div id="breakdown" class="breakdown"></div>
+    <div class="actions center">
+      <button id="restart-btn" class="btn primary">Restart Quiz</button>
+      <button id="review-btn" class="btn secondary">Review Answers</button>
+    </div>
+  </section>
+
+  <!-- Review Screen -->
+  <section id="review-screen" class="card hidden">
+    <h2>Answer Review</h2>
+    <div id="review-list"></div>
+    <div class="actions center">
+      <button id="review-restart-btn" class="btn primary">Try Again</button>
+      <button id="back-to-result-btn" class="btn secondary">Back to Summary</button>
+    </div>
+  </section>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
